@@ -38,15 +38,14 @@ class TestLibrarySystem {
 		controller = new LibraryController();
 		String customerName = "Joseph";
 		String customerAddress = "100 Money Ave ";
-		long customerId = 12345;
 		long customerRoutingNumber = 100028;
-		customerMade = factoryCustomer.createCustomer(customerName, customerAddress, customerRoutingNumber, customerId);
+		customerMade = factoryCustomer.createCustomer(customerName, customerAddress, customerRoutingNumber);
 	}
 
 	@Test
 	void TestCreateACustomerFromFactoryOfCreateCustomer() {
 		//Arrange & Act
-		Customer actualCustomer  = factoryCustomer.createCustomer(Mockito.anyString(),Mockito.anyString(),Mockito.anyLong(), Mockito.anyLong());
+		Customer actualCustomer  = factoryCustomer.createCustomer(Mockito.anyString(),Mockito.anyString(),Mockito.anyLong());
 		
 		//Assert
 		boolean statement = false;
