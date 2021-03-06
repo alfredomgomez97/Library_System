@@ -60,6 +60,9 @@ public class Swing {
 	 */
 	private void initialize() {
 		FactoryCustomer factoryCustomer = new FactoryCustomer();
+		FactoryLibrarian factoryLibrarian = new FactoryLibrarian();
+		LibraryController controller = new LibraryController();
+		
 		frame = new JFrame();
 		frame.setBounds(150, 150, 450, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -90,7 +93,9 @@ public class Swing {
 		JButton librarianButton = new JButton("Create Librarian");
 		librarianButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				librarianCreatedSuccess.setText("the librarian created was succesfful");
+				Librarian librarian = factoryLibrarian.createLibrarian(librarianNameTextField.getText(), Float.parseFloat(librarianPayTextField.getText()));
+				librarianCreatedSuccess.setText("Librarian " + librarian.getName() + " created Succesfully" );
+				controller.addLibrarian(librarian);
 			}
 		});
 		librarianButton.setBounds(10, 132, 154, 21);
