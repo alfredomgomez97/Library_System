@@ -1,1 +1,1 @@
-# Projects
+I constructed the library system using test driven development and object oriented desgin. I utilized factory method to create librarian and customers also a singleton library to hold all the books. I used  Java swing to interact with the user and then going to use JDBC to get the store the customers, librarians and the books in a database.
